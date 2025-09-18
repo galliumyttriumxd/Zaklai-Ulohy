@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Slay";
+}
+
+<div class="text-center">
+    <div class="box" id="box">
+        <p id="pocet">Počet kliknutí:</p>
+        <button id="tlacitko" onclick="klik()">Klikni na mě</button>
+    </div>
+</div>
+
+<script>
+    function klik() {
+        var pocet = document.getElementById("pocet").innerHTML;
+        var cislo = parseInt(pocet.split(": ")[1]) || 0;
+        cislo++;
+        document.getElementById("pocet").innerHTML = "Počet kliknutí: " + cislo;
+        if (cislo === 5) {
+            document.getElementById("box").style.backgroundColor = "lavender";
+        }
+    }
+</script>
+

@@ -23,6 +23,25 @@ namespace Zaklai_Ulohy.Controllers
             return View();
         }
 
+        public IActionResult Uloha2()
+        {
+            return View();
+        }
+
+        public IActionResult Uloha3()
+        {
+            return View();
+        }
+
+        public IActionResult Uloha7()
+        {
+            return View();
+        }
+        public IActionResult Uloha8()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

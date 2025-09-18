@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Slay";
+}
+
+<div class="text-center">
+    <div class="box" id="box">
+        <p>Správa (min 20 znakov)</p>
+        <p id="count">0</p>
+        <textarea id="message" rows="4" cols="50" placeholder="Zadejte svou zprávu zde..."></textarea>
+    </div>
+</div>
+
+<script>
+    document.getElementById("message").addEventListener("input", function() {
+        var message = this.value;
+        var count = message.length;
+        document.getElementById("count").innerText = count;
+        if (count >= 20) {
+            this.style.borderColor = "lightgreen";
+        } else {
+            this.style.borderColor = "red";
+        }
+    });
+</script>
+

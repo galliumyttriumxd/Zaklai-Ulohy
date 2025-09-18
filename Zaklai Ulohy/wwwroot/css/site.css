@@ -20,3 +20,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.profile_box {
+    /*    width: 300px;*/
+    padding: 50px;
+    margin: 0px 0px 200px 200px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 0.5px #000000;
+    
+}
+#box {
+    background-color: white;
+}
