@@ -1,0 +1,64 @@
+﻿@model Zaklai_Ulohy.Models.UserModel
+
+@{
+    ViewData["Title"] = "Form";
+}
+
+<h1 id="Nazov">Form</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" asp-action="Form">
+            <label for="reg-username">Username:</label><br>
+            <input type="text" id="reg-username" name="username" required class="form-control-text" asp-for="Username"><br>
+
+            <label for="reg-email">Email:</label><br>
+            <input type="email" id="reg-email" name="email" required class="form-control-text" asp-for="Email"><br>
+
+            <label for="reg-age">Age:</label><br>
+            <input type="number" id="reg-number" name="age" required class="form-control-text" asp-for="Age"><br><br>
+
+            <label for="reg-password">Password:</label><br>
+            <input type="password" id="reg-password" name="password" required class="form-control-text" asp-for="Password"><br><br>
+
+            <label for="reg-country">Country:</label><br>
+            <input type="text" id="reg-country" name="country" required class="form-control-text" asp-for="Country"><br><br>
+
+            <div style="display:flex">
+
+                <input id="Predmet" type="text" name="predmet" />
+                <input type="hidden" id="predmetyPridat" asp-for="Predmet" />
+
+                <button type="button" id="add" class="btn btn-primary">+</button>
+            </div>
+
+            <br><br>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <div id="list_of_predmety">
+            <h1>Predmety:</h1>
+        </div>
+    </div>
+</div>
+
+<script>
+
+     document.getElementById("add").addEventListener("click", function() {
+
+         var predmetInput = document.getElementById("Predmet");
+
+         if (predmetInput.value != "") {
+
+             var predmetyPridat = document.getElementById("predmetyPridat");
+             var list = document.getElementById("list_of_predmety");
+
+             predmetyPridat.value += predmetInput.value;
+             list.appendChild(document.createTextNode(predmetInput.value));
+             list.appendChild(document.createElement("br"));
+             predmetInput.value = "";
+         }
+    });
+
+</script>
+

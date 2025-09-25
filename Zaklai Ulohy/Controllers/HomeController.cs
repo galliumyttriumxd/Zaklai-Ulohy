@@ -7,6 +7,7 @@ namespace Zaklai_Ulohy.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private static List<UserModel> userList { get; set; } = new List<UserModel>();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -23,23 +24,48 @@ namespace Zaklai_Ulohy.Controllers
             return View();
         }
 
-        public IActionResult Uloha2()
+        //public IActionResult Uloha2()
+        //{
+        //    return View();
+        //}
+
+        //public IActionResult Uloha3()
+        //{
+        //    return View();
+        //}
+
+        //public IActionResult Uloha7()
+        //{
+        //    return View();
+        //}
+        //public IActionResult Uloha8()
+        //{
+        //    return View();
+        //}
+
+        public IActionResult form()
         {
             return View();
         }
 
-        public IActionResult Uloha3()
-        {
-            return View();
+        [HttpGet]
+        public IActionResult Form() {
+            return View(new UserModel());
         }
 
-        public IActionResult Uloha7()
+        [HttpPost]
+        public IActionResult Form(UserModel user)
         {
-            return View();
+            userList.Add(user);
+            return RedirectToAction("Detail", user);
+            //return View();
+
         }
-        public IActionResult Uloha8()
+
+        [HttpGet]
+        public IActionResult Detail()
         {
-            return View();
+            return View(userList);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

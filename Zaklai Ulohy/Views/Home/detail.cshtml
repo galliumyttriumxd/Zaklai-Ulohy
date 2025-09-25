@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Detail";
+}
+@model List<UserModel>
+@* <h1>Welcome queen!</h1>
+Meno: @Model.Username<br>
+Age: @Model.Age <br>
+Password: @Model.Password <br>
+Email: @Model.Email<br>
+Country: @Model.Country<br> *@
+<h1>Welcome queen!</h1>
+
+@{
+    foreach (var user in Model)
+    {
+        <div>
+            Meno: @user.Username<br>
+            Age: @user.Age <br>
+            Password: @user.Password <br>
+            Email: @user.Email<br>
+            Country: @user.Country<br>
+            Predmety: @user.Predmet<br><br>
+        </div>
+    }
+}
